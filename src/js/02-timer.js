@@ -54,14 +54,14 @@ const onStartTime = (() => {
 });
 
 function addLeadingZero(values) {
-    return String(values).padStart(2, 0)
+    return String(values).padStart(2, '0')
 }
 
 function onChangeContent(days, hours, minutes, seconds) {
-    refs.spanDays.textContent = days;
-    refs.spanHours.textContent = hours;
-    refs.spanMinutes.textContent = minutes;
-    refs.spanSeconds.textContent = seconds;
+    refs.spanDays.textContent = addLeadingZero(days);
+    refs.spanHours.textContent = addLeadingZero(hours);
+    refs.spanMinutes.textContent = addLeadingZero(minutes);
+    refs.spanSeconds.textContent = addLeadingZero(seconds);
 }
 
 function convertMs(ms) {
