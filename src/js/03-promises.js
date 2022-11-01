@@ -9,11 +9,11 @@ function createPromise(position, delay) {
     setTimeout(() => {
       const shouldResolve = Math.random() > 0.3;
        if (shouldResolve) {
-    resolve({position, delay})
-  } else {
-    reject({position, delay})
-  }
-    })
+        resolve({position, delay})
+      } else {
+        reject({position, delay})
+      }
+    }, delay)
   })
 }
 
@@ -33,7 +33,7 @@ function onClickSubmit(event) {
   stepInp = Number(step.value);
   amountInp = Number(amount.value);
 
-  for (let i = 1; i < amountInp; i++) {
+  for (let i = 1; i <= amountInp; i += 1) {
     createPromise(i, delayInp)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
