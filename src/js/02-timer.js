@@ -47,7 +47,7 @@ const onStartTime = (() => {
         const time = msSelected - currentTime;
         const { days, hours, minutes, seconds } = convertMs(time)
         onChangeContent(days, hours, minutes, seconds)
-        if (days < 1 && hours < 1 && minutes < 1 && seconds) {
+        if (days < 1 && hours < 1 && minutes < 1 && seconds < 1) {
             clearInterval(intervalID)
         }
     }, 1000)
